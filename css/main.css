@@ -613,7 +613,7 @@ img {
 }
 
 .hero {
-  background: url("./img/bg/bg-hero.jpg") center center/cover no-repeat;
+  background: url("../img/bg/bg-hero.jpg") center center/cover no-repeat;
   color: #fff;
   position: relative;
 }
@@ -670,7 +670,7 @@ img {
 }
 
 .features {
-  background: url("/img/bg/bg-features.jpg") center center/cover no-repeat;
+  background: url("../img/bg/bg-features.jpg") center center/cover no-repeat;
 }
 
 .features__list {
