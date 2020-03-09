@@ -556,10 +556,8 @@ img {
   font-family: "Gagalin-Regular", Helvetica, sans-serif;
   line-height: 1;
 }
-.section__title--centered {
-  text-align: center;
-}
 .section__title--color--black {
+  text-align: center;
   color: #2f3234;
 }
 
@@ -578,6 +576,7 @@ img {
 .menu__list {
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 .menu__item {
@@ -650,7 +649,6 @@ img {
   font-size: 13px;
   display: inline-block;
   padding: 9px 17.5px;
-  margin-left: 15px;
 }
 
 .btn:hover {
@@ -691,7 +689,7 @@ img {
   justify-content: center;
 }
 
-.feature__title {
+.feature__content h3 {
   font-family: "Lifehack-Medium";
   font-size: 24px;
   line-height: 28.14px;
@@ -700,7 +698,7 @@ img {
   margin: 0;
 }
 
-.feature__text {
+.feature__content div p {
   padding-top: 19px;
   opacity: 0.8;
   font-size: 14px;
@@ -732,6 +730,7 @@ img {
 .review:hover .review__hover {
   opacity: 1;
   transform: scale(1);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .review__img-wrapper {

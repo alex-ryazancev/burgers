@@ -17,11 +17,8 @@
   @include gagalin();
   line-height: 1;
 
-  &--centered {
-    text-align: center;
-  }
-
   &--color--black {
+    text-align: center;
     color: $black;
   }
 }
