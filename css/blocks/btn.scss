@@ -1,0 +1,14 @@
+.btn {
+  background: $red;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 13px;
+  display: inline-block;
+  padding: 9px 17.5px;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  background: #c1401e;
+}

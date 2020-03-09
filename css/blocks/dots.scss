@@ -1,0 +1,44 @@
+.dots {
+  display: flex;
+  position: absolute;
+  top: 3%;
+  padding-left: 90%;
+}
+
+.navigation-dots li {
+  cursor: pointer;
+  padding: 3px;
+}
+
+.navigation-dots li.navigation-dots__item-selected a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.navigation-dots a {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.navigation-dots a span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.navigation-dots li.navigation-dots__item a:hover {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+
+
