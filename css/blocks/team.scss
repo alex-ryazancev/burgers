@@ -1,0 +1,179 @@
+.team {
+  background: url(../img/bg/bg-team.png) center center / cover no-repeat;
+  position: relative;
+}
+
+.team-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  background-color:#291e07bd;
+}
+
+
+.team__item-pic {
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.team__avatar-img {
+  max-width: 100%;
+  display: block;
+}
+
+.accordion-container {
+  padding-top: 10%;
+  padding-left: 20%;
+}
+
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.accordion section {
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.accordion section:hover {
+  background: #444;
+}
+
+.accordion section h3 {
+  @include ubuntu ();
+  display: none;
+  font-size: 14px;
+}
+
+.accordion section:after {
+  position: relative;
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+}
+
+.accordion section:nth-child(1):after {
+  content: '1';
+}
+
+.accordion section:nth-child(2):after {
+  content: '2';
+}
+
+.accordion section:nth-child(3):after {
+  content: '3';
+}
+
+.accordion section:nth-child(4):after {
+  content: '4';
+}
+
+.accordion section:target {
+  color: #fff;
+  padding: 10px;
+}
+
+.accordion section:target:hover {
+color: #fff;
+}
+
+.accordion section:target h2 {
+  width: 100%;
+}
+
+.accordion section:target h2 a {
+  color: #f9b43b;
+  @include gagalin();
+  padding: 0;
+}
+
+.accordion section:target h3 {
+  display: block;
+}
+
+.accordion section h2 a {
+  @include gagalin();
+  padding: 8px 10px;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+  text-decoration: none;
+}
+
+.vertical section {
+  width: 100%;
+  height: 40px;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -o-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
+}
+
+.vertical :target {
+  height: 250px;
+  width: 97%;
+}
+
+.vertical section h2 {
+  position: relative;
+  left: 0;
+  top: -15px;
+}
+
+.vertical section:after {
+  top: -60px;
+  left: 810px;
+}
+
+.vertical section:target:after {
+  left: -9999px;
+}
+
+
+// .horizontal section {   
+//   width:5%;   
+//   height:250px;   
+//   -moz-transition: width 0.2s ease-out;   
+//   -webkit-transition:width 0.2s ease-out;  
+//   -o-transition:width 0.2s ease-out;  
+//   transition:width 0.2s ease-out;  
+// }
+
+// .horizontal section:after {  
+//   top:140px;  
+//   left:15px;  
+// }
+
+// .horizontal section h2 {   
+//   -webkit-transform:rotate(90deg);  
+//   -moz-transform:rotate(90deg);  
+//   -o-transform: rotate(90deg);  
+//   transform: rotate(90deg);  
+//   width:240px;   
+//   position:relative;   
+//   left:-100px;   
+//   top:85px;  
+// }   
+
+// .horizontal :target {   
+//   width:73%;  
+//   height:230px;   
+// }  
+// .horizontal :target h2 {   
+//   top:0px;  
+//   left:0;  
+//   -webkit-transform:rotate(0deg);  
+//   -moz-transform:rotate(0deg);  
+//   -o-transform: rotate(0deg);  
+//   transform: rotate(0deg);   
+// }
