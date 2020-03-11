@@ -1,52 +1,68 @@
-.team {
+.teams {
   background: url(../img/bg/bg-team.png) center center / cover no-repeat;
   position: relative;
 }
 
-.team-container {
+.team {
+  display: flex;
+  align-items: flex-start;
+}
+
+.team-content {
   position: absolute;
   width: 50%;
   height: 100%;
   right: 0;
-  background-color:#291e07bd;
+  background-color: #343739d2;
 }
 
 
+
+.team__text {
+
+}
+
+.team__name::before {
+  content: url(/img/content/accordion-arrow-down.svg);
+  margin-right: 5px;
+}
+
 .team__item-pic {
+  display: flex;
   overflow: hidden;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   position: relative;
+  margin-right: 3%;
+  min-width: 100px;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .team__avatar-img {
-  max-width: 100%;
-  display: block;
+  max-height: 100%;
+  max-width: none;
+
 }
 
 .accordion-container {
-  padding-top: 10%;
+  padding-top: 20%;
   padding-left: 20%;
 }
 
 .accordion {
   width: 100%;
-  overflow: hidden;
-  margin: 10px auto;
-  padding: 10px;
 }
 
 .accordion section {
   float: left;
   overflow: hidden;
   cursor: pointer;
-  margin: 3px;
 }
 
-.accordion section:hover {
-  background: #444;
-}
+.accordion section:hover {}
 
 .accordion section h3 {
   @include ubuntu ();
@@ -57,7 +73,6 @@
 .accordion section:after {
   position: relative;
   font-size: 24px;
-  color: #000;
   font-weight: bold;
 }
 
@@ -79,11 +94,10 @@
 
 .accordion section:target {
   color: #fff;
-  padding: 10px;
 }
 
 .accordion section:target:hover {
-color: #fff;
+  color: #fff;
 }
 
 .accordion section:target h2 {
@@ -96,14 +110,16 @@ color: #fff;
   padding: 0;
 }
 
+.accordion section:target h2 a::before {
+  content: url(/img/content/accordion-arrow-up.svg);
+}
+
 .accordion section:target h3 {
   display: block;
 }
 
 .accordion section h2 a {
   @include gagalin();
-  padding: 8px 10px;
-  display: block;
   font-size: 14px;
   font-weight: normal;
   color: #fff;
@@ -111,7 +127,7 @@ color: #fff;
 }
 
 .vertical section {
-  width: 100%;
+  width: 70%;
   height: 40px;
   -webkit-transition: height 0.2s ease-out;
   -moz-transition: height 0.2s ease-out;
@@ -120,14 +136,12 @@ color: #fff;
 }
 
 .vertical :target {
-  height: 250px;
-  width: 97%;
+  height: 160px;
 }
 
 .vertical section h2 {
   position: relative;
   left: 0;
-  top: -15px;
 }
 
 .vertical section:after {
@@ -136,7 +150,7 @@ color: #fff;
 }
 
 .vertical section:target:after {
-  left: -9999px;
+
 }
 
 
