@@ -1,0 +1,14 @@
+.map {
+  background: url("../img/bg/bg-map.png") 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.yandex-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
