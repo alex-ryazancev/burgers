@@ -1,5 +1,4 @@
 .btn {
-<<<<<<< HEAD
 	@include inlineblock();
 	background: $orange;
 	font-size: rem(13px);
@@ -14,17 +13,3 @@
 		background: #c1401e;
 	  }
 	}
-=======
-  background: $red;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 5px;
-  font-size: 13px;
-  display: inline-block;
-  padding: 9px 17.5px;
-}
-
-.btn:hover {
-  background: #c1401e;
-}
->>>>>>> 57c793ca9ca69aa17aea3b514f448cc05161b174
