@@ -566,7 +566,7 @@ footer {
 }
 
 .best {
-  background: url("/img/bg/bg-features.jpg") no-repeat;
+  background: url("../img/bg/bg-features.jpg") no-repeat;
   background-size: cover;
   text-align: center;
   display: flex;
@@ -655,7 +655,6 @@ footer {
   font-family: "Ubuntu", Helvetica, sans-serif;
   font-weight: 500;
 }
-
 .btn:hover {
   background: #c1401e;
 }
@@ -684,7 +683,7 @@ footer {
 }
 
 .burger-weight__measure {
-  background: url("../../img/icons/kkal.svg") 50% no-repeat;
+  background: url("../img/icons/kkal.svg") 50% no-repeat;
   width: 4.0625rem;
   height: 3.75rem;
   position: relative;
@@ -1081,7 +1080,7 @@ footer {
 }
 
 .map {
-  background: url(/img/bg/bg-map.png) 50% no-repeat;
+  background: url("../img/bg/bg-map.png") 50% no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1170,8 +1169,17 @@ footer {
   }
 }
 
+.show-hidden__menu {
+  width: 25rem;
+}
+@media screen and (max-width: 480px) {
+  .show-hidden__menu {
+    width: 13.75rem;
+  }
+}
+
 .menu {
-  background: url("/img/bg/bg-assortiment.png") 50% no-repeat;
+  background: url("../img/bg/bg-assortiment.png") 50% no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1266,7 +1274,7 @@ footer {
 }
 
 .order {
-  background: url("/img/bg/bg-delivery.jpg") 50% no-repeat;
+  background: url("../img/bg/bg-delivery.jpg") 50% no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1437,7 +1445,7 @@ footer {
   vertical-align: middle;
   margin-right: 1.25rem;
   border: 0;
-  background: #e35028;
+  background: #e45028;
   font-size: 0.8125rem;
   text-transform: uppercase;
   border-radius: 0.3125rem;
@@ -1445,6 +1453,9 @@ footer {
   font-family: "Ubuntu", Helvetica, sans-serif;
   padding: 0.625rem 0.9375rem;
   cursor: pointer;
+}
+.order__form-button:hover {
+  background: #c1401e;
 }
 
 .order__form-button_reset {
@@ -1764,6 +1775,17 @@ footer {
   .team-acco__content {
     padding: 0 25%;
   }
+}
+
+.show-hidden {
+  display: block;
+}
+.show-hidden:after {
+  display: block;
+  transition: 0.3s;
+}
+.show-hidden:before {
+  display: none;
 }
 
 .team-acco__pic {

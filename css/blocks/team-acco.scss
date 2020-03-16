@@ -83,6 +83,23 @@
   }
 }
 
+.show-hidden {
+  &:after {
+    display: block;
+    transition: .3s;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  display: block
+}
+
+// .show-hidden {
+//   display: block;
+// }
+
 .team-acco__pic {
   text-align: center;
   width: 30%;
