@@ -1,0 +1,26 @@
+.feature {
+  text-align: center;
+}
+
+.feature__img {
+  display: flex;
+  justify-content: center;
+}
+
+.feature__content h3 {
+  @include lifehack();
+  font-size: 24px;
+  line-height: 28.14px;
+  letter-spacing: -0.6px;
+}
+
+.feature__content div p {
+  padding-top: 19px;
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 24.07px;
+}
+
+.feature__content {
+  margin-top: 38px;
+}
