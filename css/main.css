@@ -1283,9 +1283,6 @@ footer {
   text-align: center;
 }
 
-.order__form {
-  margin-left: -5%;
-}
 @media screen and (max-width: 768px) {
   .order__form {
     margin-left: 0;
@@ -1301,7 +1298,7 @@ footer {
 .order__form-col {
   float: left;
   width: 45%;
-  margin-left: 5%;
+  margin-right: 5%;
 }
 @media screen and (max-width: 768px) {
   .order__form-col {
@@ -1319,6 +1316,10 @@ footer {
   .order__form-row {
     margin-bottom: 0.4375rem;
   }
+}
+
+.order__form-row:last-child {
+  margin-bottom: 0;
 }
 
 .order__form-label {
@@ -1669,6 +1670,11 @@ footer {
 .section__title.section__title_black {
   color: #2f3234;
 }
+@media screen and (max-width: 480px) {
+  .section__title.section__title_black {
+    font-size: 3.125rem;
+  }
+}
 .section__title.section__title_white {
   color: white;
 }
@@ -1770,6 +1776,7 @@ footer {
 .team-acco__content {
   padding-top: 0.875rem;
   display: none;
+  margin-right: -1.25rem;
 }
 @media screen and (max-width: 768px) {
   .team-acco__content {
@@ -1784,13 +1791,19 @@ footer {
   display: block;
   transition: 0.3s;
 }
+@media screen and (max-width: 480px) {
+  .show-hidden:after {
+    left: 5.3125rem;
+    top: 0.9375rem;
+  }
+}
 .show-hidden:before {
   display: none;
 }
 
 .team-acco__pic {
   text-align: center;
-  width: 30%;
+  margin-right: 0.9375rem;
 }
 @media screen and (max-width: 768px) {
   .team-acco__pic {
@@ -1810,7 +1823,7 @@ footer {
 }
 
 .team-acco__text {
-  width: 70%;
+  width: 60%;
 }
 
 .team-acco__pic,

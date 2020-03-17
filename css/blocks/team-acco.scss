@@ -77,6 +77,7 @@
   @extend %clearfix;
   padding-top: rem(14px);
   display: none;
+  margin-right: rem(-20px);
 
   @include tablets {
     padding: 0 25%;
@@ -87,6 +88,11 @@
   &:after {
     display: block;
     transition: .3s;
+
+    @include phones {
+      left: rem(85px);
+      top: rem(15px);
+    }
   }
 
   &:before {
@@ -96,13 +102,9 @@
   display: block
 }
 
-// .show-hidden {
-//   display: block;
-// }
-
 .team-acco__pic {
   text-align: center;
-  width: 30%;
+  margin-right: rem(15px);
 
   @include tablets {
     margin-bottom: rem(15px);
@@ -118,7 +120,7 @@
 }
 
 .team-acco__text {
-  width: 70%;
+  width: 60%;
 }
 
 .team-acco__pic,

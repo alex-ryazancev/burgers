@@ -1,50 +1,7 @@
-<<<<<<< HEAD
 .menu {
 	background: url('../img/bg/bg-assortiment.png') 50% no-repeat;
 	background-size: cover;
 	position: relative;
-=======
-$itemsMargin: 13px;
-
-.menu {
-  margin-right: 15px;
-}
-
-.menu__list {
-  display: flex;
-  align-items: center;
-}
-
-.menu__item {
-  display: flex;
-  align-items: center;
-  &:before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: currentColor;
-    margin-left: $itemsMargin;
-  }
-
-  &:first-child {
-    &:before {
-      display: none;
-    }
-  }
-}
-
-.menu__link {
-  margin-left: $itemsMargin;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-
-.menu__link:hover {
-  text-decoration: underline;
->>>>>>> 57c793ca9ca69aa17aea3b514f448cc05161b174
 }
 
 .menu__title {

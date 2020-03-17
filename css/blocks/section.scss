@@ -18,18 +18,14 @@
 	@include gagalin;
 	margin-bottom: rem(12px);
 
-<<<<<<< HEAD
 	&.section__title_black {
 		color: $black;
+		@include phones {
+			font-size: rem(50px);
+		}
 	}
 
 	&.section__title_white {
 		color: white;
 	}
-=======
-  &--color--black {
-    text-align: center;
-    color: $black;
-  }
->>>>>>> 57c793ca9ca69aa17aea3b514f448cc05161b174
 }

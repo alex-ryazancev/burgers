@@ -10,7 +10,6 @@
 
 .order__form {
   @extend %clearfix;
-  margin-left: -5%;
   @include tablets {
     margin-left: 0;
     padding: 0 20%;
@@ -23,7 +22,7 @@
 .order__form-col {
   float: left;
   width: 45%;
-  margin-left: 5%;
+  margin-right: 5%;
   @include tablets {
     width: 100%;
     float: none;
@@ -37,6 +36,10 @@
   @include phones {
     margin-bottom: rem(7px);
   }
+}
+
+.order__form-row:last-child {
+  margin-bottom: 0;
 }
 
 .order__form-label {
