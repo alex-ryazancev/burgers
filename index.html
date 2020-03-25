@@ -8,6 +8,7 @@
   <title>Бургеры
   </title>
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./js/menu.js">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
               </nav>
             </div>
             <div class="header__links"><a class="order-link btn" href="" data-scroll-to="6">Заказать</a><a
-                class="hamburger-menu-link" href="">
+                class="hamburger-menu-link" href="" id="open">
                 <div class="hamburger-menu-link__bars"></div>
               </a></div>
           </header>
@@ -488,7 +489,22 @@
       </section>
     </div>
   </div>
-  <div class="hamburger-menu" id="hamburger-menu">
+  <script>
+
+  const open = document.querySelector('#open');
+  const close = document.querySelector('#close');
+  const menu= document.querySelector('#menu');
+  
+    open.addEventListener('click', function() {
+      menu.style.display = 'block';
+    })
+
+    close.addEventListener('click', function() {
+      menu.style.display = 'none';
+    })
+  
+  </script>
+  <div class="hamburger-menu" id="menu">
     <div class="hamburger-menu__logo"><a class="logo" href="#"><img src="./img/icons/logo.svg"></a></div>
     <div class="hamburger-menu__items">
       <nav class="nav nav_hamburger">
@@ -502,8 +518,8 @@
         </ul>
       </nav>
     </div>
-    <a class="hamburger-menu__close" href="#">
-      <svg class="hamburger-menu__close-icon">
+    <a class="hamburger-menu__close" id="close" href="#">
+      <svg class="hamburger-menu__close-icon" style="fill: #fff">
         <use xlink:href="./img/sprite/sprite.svg#close"></use>
       </svg>
     </a>
