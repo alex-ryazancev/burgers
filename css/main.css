@@ -1146,10 +1146,10 @@ footer {
 
 .menu-acco__content {
   height: 100%;
-  float: left;
   background: rgba(47, 50, 52, 0.93);
   width: 0;
   overflow: hidden;
+  transition: width 0.6s;
 }
 
 .menu-acco__text {
@@ -1160,7 +1160,6 @@ footer {
   padding: 3.75rem 1.875rem;
   width: 100%;
   line-height: 1.8;
-  display: none;
 }
 @media screen and (max-width: 480px) {
   .menu-acco__text {
@@ -1168,15 +1167,27 @@ footer {
   }
 }
 
-.show-hidden__menu {
-  width: 25rem;
+.menu-acco__item--active .menu-acco__content {
+  width: 33.75rem;
 }
 @media screen and (max-width: 480px) {
-  .show-hidden__menu {
-    width: 13.75rem;
+  .menu-acco__item--active .menu-acco__content {
+    width: 12.5rem;
   }
 }
 
+.menu-acco__item--active .menu-acco__text {
+  animation: acco-text 0.8s linear forwards;
+}
+
+@keyframes acco-text {
+  75% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .menu {
   background: url("../img/bg/bg-assortiment.png") 50% no-repeat;
   background-size: cover;
@@ -1780,23 +1791,6 @@ footer {
   .team-acco__content {
     padding: 0 25%;
   }
-}
-
-.show-hidden {
-  display: block;
-}
-.show-hidden:after {
-  display: block;
-  transition: 0.3s;
-}
-@media screen and (max-width: 480px) {
-  .show-hidden:after {
-    left: 5.3125rem;
-    top: 0.9375rem;
-  }
-}
-.show-hidden:before {
-  display: none;
 }
 
 .team-acco__pic {

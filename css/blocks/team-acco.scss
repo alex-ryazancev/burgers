@@ -84,23 +84,23 @@
   }
 }
 
-.show-hidden {
-  &:after {
-    display: block;
-    transition: .3s;
+// .show-hidden {
+//   &:after {
+//     display: block;
+//     transition: .3s;
 
-    @include phones {
-      left: rem(85px);
-      top: rem(15px);
-    }
-  }
+//     @include phones {
+//       left: rem(85px);
+//       top: rem(15px);
+//     }
+//   }
 
-  &:before {
-    display: none;
-  }
+//   &:before {
+//     display: none;
+//   }
 
-  display: block
-}
+//   display: block
+// }
 
 .team-acco__pic {
   text-align: center;
