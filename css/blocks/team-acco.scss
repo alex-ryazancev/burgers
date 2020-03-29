@@ -93,16 +93,6 @@
   animation: acco-text .6s;
   }
 
-@keyframes acco-text {
-  75% {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .team-acco__item--active .team-acco__trigger {
   &:before {
     transform: rotate(180deg);

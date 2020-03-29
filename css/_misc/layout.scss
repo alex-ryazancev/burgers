@@ -77,10 +77,10 @@ footer {
   box-sizing: border-box;
 }
 
-// .section {
-//   // min-height: rem(650px);
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-// }
+.section {
+  min-height: rem(650px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

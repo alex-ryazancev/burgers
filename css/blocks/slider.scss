@@ -13,19 +13,31 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5% 0 5%;
+  padding: 0 5%;
 }
 
 .slider__content {
   display: flex;
+  height: rem(600px);
+  margin: rem(100px) 0;
 
   @include tablets {
     flex-direction: column;
+    height: rem(1000px);
+  }
+  
+  @include phones {
+    height: rem(700px);
   }
 }
 
 .slider__right {
-  padding-right: 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 5%;
+
 
   @include tablets {
     text-align: center;
@@ -34,10 +46,28 @@
     width: 100%;
 
     @include phones {
-      padding: 0;
+      padding: 3%;
     }
   }
 }
+
+.slider__left {
+  padding-top: 10%;
+
+  @include tablets {
+    // padding: 0;
+    // margin: 0;
+  }
+
+  @include phones {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+
+
 
 .slider__left,
 .slider__right {
@@ -53,6 +83,9 @@
 .slider__links {
   display: flex;
 
+  @include phones {
+
+  }
 }
 
 .right-arrow {
@@ -68,13 +101,11 @@
 .left-arrow,
 .right-arrow {
   position: absolute;
-  bottom: 40%;
   transition: .3s;
-  height: 11%;
   display: flex;
 
   @include tablets {
-    height: 2%;
+
   }
 
   &:hover {
@@ -82,7 +113,7 @@
     .left-arrow__icon,
     .right-arrow__icon {
       margin-bottom: rem(-15px);
-      width: rem(30px);
+      width: rem(35px);
       height: rem(30px);
     }
   }
@@ -91,7 +122,7 @@
 .left-arrow__icon,
 .right-arrow__icon {
   width: rem(35px);
-  height: rem(35px);
+  height: rem(20px);
   transition: .3s;
 }
 
@@ -122,6 +153,9 @@
     justify-content: center;
     margin-bottom: rem(20px);
   }
+  @include phones {
+    margin-bottom: rem(-15px);
+  }
 }
 
 .slider__structure {
@@ -132,6 +166,7 @@
   border-radius: rem(5px);
   text-decoration: none;
   margin-bottom: rem(300px);
+
   @include tablets {
     margin: 0 50% 0 0;
   }
@@ -182,15 +217,25 @@
 .section__title_red {
   color: #c1401e;
   letter-spacing: rem(-2px);
-
+  
   &.slider__title-link {
     font-size: rem(35px);
     margin-bottom: rem(-12px);
     padding: 0 rem(20px) 0 rem(20px);
+    @include phones {
+      line-height: rem(50px);
+    }
   }
+
 }
 
-.slider__title {
-  text-decoration: none;
-  font-style: none;
+.section__title-slider {
+  color: #fff;
+  line-height: rem(70px);
+
+  @include phones {
+    font-size: rem(45px);
+    line-height: rem(40px);
+    text-align: center;
+  }
 }
