@@ -76,31 +76,38 @@
 .team-acco__content {
   @extend %clearfix;
   padding-top: rem(14px);
-  display: none;
   margin-right: rem(-20px);
+  display: none;
 
   @include tablets {
     padding: 0 25%;
   }
 }
 
-// .show-hidden {
-//   &:after {
-//     display: block;
-//     transition: .3s;
+.team-acco__item--active .team-acco__content {
+  animation: acco-text .6s;
+  display: block;
+}
 
-//     @include phones {
-//       left: rem(85px);
-//       top: rem(15px);
-//     }
-//   }
+.team-acco__item--active .team-acco__text {
+  animation: acco-text .6s;
+  }
 
-//   &:before {
-//     display: none;
-//   }
+@keyframes acco-text {
+  75% {
+    opacity: 0;
+  }
 
-//   display: block
-// }
+  to {
+    opacity: 1;
+  }
+}
+
+.team-acco__item--active .team-acco__trigger {
+  &:before {
+    transform: rotate(180deg);
+ }
+}
 
 .team-acco__pic {
   text-align: center;

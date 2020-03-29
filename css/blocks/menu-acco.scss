@@ -26,6 +26,10 @@
   text-decoration: none;
   position: relative;
 
+  @include tablets {
+    width: rem(65px);
+  }
+
   @include phones {
     width: rem(50px);
   }
@@ -73,10 +77,14 @@
 }
 
 .menu-acco__item--active .menu-acco__content {
-  width: rem(540px);
+  width: rem(550px);
+
+  @include tablets {
+    width: rem(350px)
+  }
 
   @include phones {
-    width: rem(200px)
+    width: rem(220px)
   }
 }
 

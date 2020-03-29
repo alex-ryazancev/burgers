@@ -8,7 +8,6 @@
   <title>Бургеры
   </title>
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./js/menu.js">
 </head>
 
 <body>
@@ -107,13 +106,13 @@
         </div>
       </section>
       <section class="section slider">
-        <div class="slider__section container">
+        <li class="slider__section container">
           <a class="left-arrow" href="#">
-            <svg class="left-arrow__icon" style="fill: #fff">
+            <svg class="left-arrow__icon" id="left" style="fill: #fff">
               <use xlink:href="./img/sprite/sprite.svg#arrow-scroll"></use>
             </svg></a>
-          <div class="slider__container">
-            <div class="slider__content">
+          <ul class="slider__container" id="items">
+            <li class="slider__content">
               <div class="slider__left">
                 <div class="slider__left-item">
                   <a class="slider__structure" href="#">
@@ -143,10 +142,134 @@
                   <a class="order-link btn" href="">Заказать</a>
                 </div>
               </div>
-            </div>
-          </div>
+            </li>
+            <li class="slider__content">
+              <div class="slider__left">
+                <div class="slider__left-item">
+                  <a class="slider__structure" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#burger"></use>
+                    </svg>
+                    <div class="slider__item-text">состав</div>
+                  </a>
+                  <a class="slider__calories" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                    <div class="slider__item-text slider__text-calories">1200</div>
+                    <div class="slider__item-text">ккал</div>
+                  </a>
+                </div>
+                <img class="slider__menu-img" src="./img/content/sandwich_burger.png" alt="">
+              </div>
+              <div class="slider__right">
+                <div class="section__title section__title_white slider__title">Sandwich</div>
+                <div class="slider__text-content">Ваш старый добрый знакомый, с рубленным бифштексом из 100% говядины,
+                  тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с
+                  добавлением экзотического соуса чураско.</div>
+                <div class="slider__links">
+                  <div class="section__title section__title_red">500</div>
+                  <div class="section__title section__title_red slider__title-link">рублей</div>
+                  <a class="order-link btn" href="">Заказать</a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__content">
+              <div class="slider__left">
+                <div class="slider__left-item">
+                  <a class="slider__structure" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#burger"></use>
+                    </svg>
+                    <div class="slider__item-text">состав</div>
+                  </a>
+                  <a class="slider__calories" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                    <div class="slider__item-text slider__text-calories">1200</div>
+                    <div class="slider__item-text">ккал</div>
+                  </a>
+                </div>
+                <img class="slider__menu-img" src="./img/content/chiken_burger.png" alt="">
+              </div>
+              <div class="slider__right">
+                <div class="section__title section__title_white slider__title">chiken burger</div>
+                <div class="slider__text-content">Ваш старый добрый знакомый, с рубленным бифштексом из 100% говядины,
+                  тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с
+                  добавлением экзотического соуса чураско.</div>
+                <div class="slider__links">
+                  <div class="section__title section__title_red">500</div>
+                  <div class="section__title section__title_red slider__title-link">рублей</div>
+                  <a class="order-link btn" href="">Заказать</a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__content">
+              <div class="slider__left">
+                <div class="slider__left-item">
+                  <a class="slider__structure" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#burger"></use>
+                    </svg>
+                    <div class="slider__item-text">состав</div>
+                  </a>
+                  <a class="slider__calories" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                    <div class="slider__item-text slider__text-calories">1200</div>
+                    <div class="slider__item-text">ккал</div>
+                  </a>
+                </div>
+                <img class="slider__menu-img" src="./img/content/cheese_burger.png" alt="">
+              </div>
+              <div class="slider__right">
+                <div class="section__title section__title_white slider__title">Nyc diner bacon cheeseburger</div>
+                <div class="slider__text-content">Ваш старый добрый знакомый, с рубленным бифштексом из 100% говядины,
+                  тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с
+                  добавлением экзотического соуса чураско.</div>
+                <div class="slider__links">
+                  <div class="section__title section__title_red">500</div>
+                  <div class="section__title section__title_red slider__title-link">рублей</div>
+                  <a class="order-link btn" href="">Заказать</a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__content">
+              <div class="slider__left">
+                <div class="slider__left-item">
+                  <a class="slider__structure" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#burger"></use>
+                    </svg>
+                    <div class="slider__item-text">состав</div>
+                  </a>
+                  <a class="slider__calories" href="#">
+                    <svg class="slider__icon-pic">
+                      <use xlink:href="./img/sprite/sprite.svg#kkal"></use>
+                    </svg>
+                    <div class="slider__item-text slider__text-calories">1200</div>
+                    <div class="slider__item-text">ккал</div>
+                  </a>
+                </div>
+                <img class="slider__menu-img" src="./img/content/spicy_burger.png" alt="">
+              </div>
+              <div class="slider__right">
+                <div class="section__title section__title_white slider__title">Spacy shrimp burger</div>
+                <div class="slider__text-content">Ваш старый добрый знакомый, с рубленным бифштексом из 100% говядины,
+                  тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с
+                  добавлением экзотического соуса чураско.</div>
+                <div class="slider__links">
+                  <div class="section__title section__title_red">500</div>
+                  <div class="section__title section__title_red slider__title-link">рублей</div>
+                  <a class="order-link btn" href="">Заказать</a>
+                </div>
+              </div>
+            </li>
+          </ul>
           <a class="right-arrow" href="#">
-            <svg class="right-arrow__icon" style="fill: #fff">
+            <svg class="right-arrow__icon" id="right" style="fill: #fff">
               <use xlink:href="./img/sprite/sprite.svg#arrow-scroll"></use>
             </svg></a>
         </div>
@@ -274,7 +397,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/1.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Вера</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Первые Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -287,7 +410,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/2.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Константин Спилберг</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Новые Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -300,7 +423,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/3.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Елена</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Главные Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -313,7 +436,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/4.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Станислав</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Другие Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -326,7 +449,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/5.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Сергей</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Постоянные Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -339,7 +462,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/6.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Елизавета</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Вечные Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -352,7 +475,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/7.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Виталий</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Определенные Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -365,7 +488,7 @@
               <div class="review__photo" style="background-image: url('./img/content/photo-reviews/8.png')"></div>
               <div class="review__hover">
                 <div class="review__title">Артём</div>
-                <div class="review__shorttext">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
+                <div class="review__shorttext">Важные Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно
                   забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким
                   расплавленным.</div>
                 <div class="review__button-wrap">
@@ -526,7 +649,7 @@
         <use xlink:href="./img/sprite/sprite.svg#close"></use>
       </svg>
     </a>
-    <!-- <div class="full-review__inner">
+    <div class="full-review__inner">
       <div class="full-review__title">Констнтин Спилберг</div>
       <div class="full-review__content">
         Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут
@@ -548,7 +671,7 @@
       <div class="status-popup__message error-message">Произошла ошибка</div>
       <a class="status-popup__close btn" href="#">Закрыть</a>
     </div>
-  </div> -->
+  </div>
 
 <script src="/scripts/script.js"></script>
 </body>
