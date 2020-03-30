@@ -435,6 +435,8 @@ template {
 
 @keyframes slideInUp {
   from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
     opacity: 0;
   }
   to {
