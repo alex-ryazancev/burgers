@@ -3,6 +3,7 @@
 const openMenu = document.querySelector('.hamburger-menu-link'),
   closeMenu = document.querySelector('.hamburger-menu__close'),
   burgerMenu = document.querySelector('.hamburger-menu');
+  overflowHidden = document.querySelector('.wrapper');
 
 openMenu.addEventListener('click', function (event) {
   event.preventDefault();
@@ -76,26 +77,37 @@ for (let i = 0; i < teamAccoItemLength; i++) {
 
 /////////////// modal window /////////////////
 
-const reviews = document.querySelector('.reviews'), 
-overlay = document.querySelector('.overlay'), 
-popupText = document.querySelector('.popup__text');
+const reviews = document.querySelector('.reviews'),
+  overlay = document.querySelector('.popup'),
+  popupText = document.querySelector('.full-review__content');
+  closePopup = document.querySelector('.full-review__close');
 
 reviews.addEventListener('click', e => {
   let element = e.target;
 
-  if (element.tagName = 'BUTTON') {
-    let modalText = element.previousElementsibling.innerHTML
+  if (element.tagName === 'A') {
+    let modalText = element.previousElementSibling.innerHTML
 
-    popupText.innerHTML = modalText; 
+    popupText.innerHTML = modalText;
     overlay.style.display = 'block';
+
   }
 })
 
 document.addEventListener('keyup', e => {
   let keyName = e.key;
+
   if (keyName === 'Escape') {
-    overlay.style.dispLay = 'none';
+    overlay.style.display = 'none';
   }
+})
+
+closePopup.addEventListener('click', function (event) {
+  event.preventDefault();
+});
+
+closePopup.addEventListener('click', function () {
+  overlay.style.display = 'none';
 })
 
 /////////////// slider /////////////////
@@ -108,11 +120,11 @@ right.addEventListener('click', function (event) {
   event.preventDefault();
 });
 
-right.addEventListener("click", function(e) {
+right.addEventListener("click", function (e) {
   loop("right", e);
 });
- 
-left.addEventListener("click", function(e) {
+
+left.addEventListener("click", function (e) {
   loop("left", e);
 });
 
@@ -122,7 +134,7 @@ function loop(direction, e) {
     items.appendChild(items.firstElementChild);
 
   } else {
-    items.insertBefore(items.lastElementChild, 
+    items.insertBefore(items.lastElementChild,
       items.firstElementChild);
   }
 }

@@ -1,10 +1,18 @@
 .popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(#ffffff, .99);
+	z-index: 100;
 	display: none;
+	transition: opacity .3s;
+	font-size: rem(14px);
 }
 
 .full-review {
 	padding: rem(25px) rem(20px);
-	position: relative;
 }
 
 .full-review__title {
@@ -56,5 +64,3 @@
 .error-message {
 	color: $red;
 }
-
-

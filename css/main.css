@@ -486,6 +486,10 @@ template {
   font-weight: bold;
   font-style: normal;
 }
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
 @media screen and (max-width: 992px) {
   html {
     font-size: 0.9375rem;
@@ -495,6 +499,18 @@ template {
   html {
     font-size: 0.8125rem;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 html,
@@ -888,7 +904,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(47, 50, 52, 0.99);
+  background: #2f3234;
   align-items: center;
   justify-content: center;
   z-index: 100;
@@ -1494,12 +1510,20 @@ footer {
 }
 
 .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.99);
+  z-index: 100;
   display: none;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
 }
 
 .full-review {
   padding: 1.5625rem 1.25rem;
-  position: relative;
 }
 
 .full-review__title {

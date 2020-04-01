@@ -2,9 +2,26 @@ html {
   @include laptop {
     font-size: rem(15px);
   }
+
   @include phones {
     font-size: rem(13px);
   }
+
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+
 }
 
 html,
@@ -58,6 +75,7 @@ table {
 ul {
   padding: 0;
   margin: 0;
+
   li {
     list-style: none;
   }
