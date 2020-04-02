@@ -981,6 +981,7 @@ footer {
   background: url("../img/bg/bg-hero.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
+  flex-direction: row;
 }
 @media screen and (max-width: 768px) {
   .hero {
@@ -1510,16 +1511,30 @@ footer {
 }
 
 .popup {
+  display: none;
+}
+
+.full-review {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.99);
+  background: rgba(47, 50, 52, 0.99);
   z-index: 100;
-  display: none;
+  transition: opacity 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-review__popup {
+  background: wheat;
+  position: relative;
+  margin: 15%;
   transition: opacity 0.3s;
   font-size: 0.875rem;
+  border-radius: 0.3125rem;
+  padding: 3.125rem 1.25rem;
 }
 
 .full-review {
@@ -1540,6 +1555,7 @@ footer {
 }
 
 .full-review__close {
+  fill: #ff3d3d;
   width: 0.9375rem;
   height: 0.9375rem;
   display: block;
@@ -2075,8 +2091,8 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   max-width: 100%;
-  max-height: 100%;
-  padding-top: 20%;
+  max-height: 25rem;
+  margin-top: 22%;
 }
 @media screen and (max-width: 768px) {
   .slider__menu-img {
@@ -2112,7 +2128,7 @@ footer {
   background-color: #e34f27;
   border-radius: 0.3125rem;
   text-decoration: none;
-  margin-bottom: 18.75rem;
+  margin-bottom: 20rem;
 }
 @media screen and (max-width: 768px) {
   .slider__structure {

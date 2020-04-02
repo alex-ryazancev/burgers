@@ -17,6 +17,14 @@ closeMenu.addEventListener('click', function () {
   burgerMenu.style.display = 'none';
 })
 
+document.addEventListener('keyup', e => {
+  let keyName = e.key;
+
+  if (keyName === 'Escape') {
+    burgerMenu.style.display = 'none';
+  }
+})
+
 ///////////////// horizontal accordion /////////////////
 
 const menu = document.querySelector('.menu'),
@@ -89,7 +97,7 @@ reviews.addEventListener('click', e => {
     let modalText = element.previousElementSibling.innerHTML
 
     popupText.innerHTML = modalText;
-    overlay.style.display = 'block';
+    overlay.style.display = 'flex';
 
   }
 })
