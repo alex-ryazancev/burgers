@@ -1,9 +1,9 @@
 ///////////////// burger menu /////////////////
 
-const openMenu = document.querySelector('.hamburger-menu-link'),
-  closeMenu = document.querySelector('.hamburger-menu__close'),
-  burgerMenu = document.querySelector('.hamburger-menu');
-  overflowHidden = document.querySelector('.wrapper');
+const openMenu = document.querySelector('.hamburger-menu-link');
+closeMenu = document.querySelector('.hamburger-menu__close');
+burgerMenu = document.querySelector('.hamburger-menu');
+overflowHidden = document.querySelector('.wrapper')
 
 openMenu.addEventListener('click', function (event) {
   event.preventDefault();
@@ -85,10 +85,10 @@ for (let i = 0; i < teamAccoItemLength; i++) {
 
 /////////////// modal window reviews/////////////////
 
-const reviews = document.querySelector('.reviews'),
-  overlay = document.querySelector('.popup'),
-  popupText = document.querySelector('.full-review__content');
-  closePopup = document.querySelector('.full-review__close');
+const reviews = document.querySelector('.reviews');
+overlay = document.querySelector('.popup');
+popupText = document.querySelector('.full-review__content');
+closePopup = document.querySelector('.full-review__close')
 
 reviews.addEventListener('click', e => {
   let element = e.target;
@@ -107,6 +107,8 @@ document.addEventListener('keyup', e => {
 
   if (keyName === 'Escape') {
     overlay.style.display = 'none';
+    success.style.display = 'none';
+    errors.style.display = 'none';
   }
 })
 
@@ -121,8 +123,8 @@ closePopup.addEventListener('click', function () {
 /////////////// slider /////////////////
 
 const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const items = document.querySelector("#items");
+right = document.querySelector("#right");
+items = document.querySelector("#items")
 
 right.addEventListener('click', function (event) {
   event.preventDefault();
@@ -150,33 +152,36 @@ function loop(direction, e) {
 /////////////// form sent /////////////////
 
 const myForm = document.querySelector('.order__form-tag');
-const send = document.querySelector('.order__form-button');
-const errors = document.querySelector('#errors');
-const success = document.querySelector('#success');
+send = document.querySelector('.order__form-button');
+errors = document.querySelector('#errors');
+success = document.querySelector('#success');
+closeBtn = document.querySelector('#close-btn')
 
 send.addEventListener('click', event => {
   event.preventDefault();
 
   if (validateForm(myForm)) {
     const formData = {
-        name: myForm.elements.name.value,
-        phone: myForm.elements.phone.value,
-        comment: myForm.elements.comment.value,
-        to: myForm.elements.email
+      name: myForm.elements.name.value,
+      phone: myForm.elements.phone.value,
+      comment: myForm.elements.comment.value,
+      to: myForm.elements.email
     }
- 
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
     xhr.send(JSON.stringify(formData));
-        xhr.addEventListener('load', () => {
-            if (xhr.response.status === true) {
-              success.style.display = 'flex';
-            }
-            if (xhr.response.status === false) {
-              errors.style.display = 'flex';
-          }
-        });
-    }
+    xhr.addEventListener('load', () => {
+
+      // console.log(xhr.response.status)
+      if (xhr.response.status < 400) {
+        success.style.display = 'flex';
+      }
+      else {
+        errors.style.display = 'flex';
+      }
+    });
+  }
 });
 
 function validateForm(form) {
@@ -216,3 +221,12 @@ function validateField(field) {
   field.nextElementSibling.textContent = field.validationMessage;
   return field.checkValidity();
 }
+
+closeBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+});
+
+closeBtn.addEventListener('click', function () {
+  success.style.display = 'none';
+  errors.style.display = 'none';
+})

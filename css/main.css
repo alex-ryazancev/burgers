@@ -1587,8 +1587,32 @@ footer {
   font-size: 0.875rem;
 }
 
-.status-popup {
-  width: 15rem;
+.status-popup__success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, 0.99);
+  z-index: 100;
+  transition: opacity 0.3s;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.status-popup__errors {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, 0.99);
+  z-index: 100;
+  transition: opacity 0.3s;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 .error-message {
