@@ -1510,6 +1510,10 @@ footer {
   background: transparent;
 }
 
+.order__form-error {
+  color: #b41515;
+}
+
 .popup {
   display: none;
 }

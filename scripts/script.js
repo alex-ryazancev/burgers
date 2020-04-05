@@ -83,7 +83,7 @@ for (let i = 0; i < teamAccoItemLength; i++) {
   })
 }
 
-/////////////// modal window /////////////////
+/////////////// modal window reviews/////////////////
 
 const reviews = document.querySelector('.reviews'),
   overlay = document.querySelector('.popup'),
@@ -145,4 +145,74 @@ function loop(direction, e) {
     items.insertBefore(items.lastElementChild,
       items.firstElementChild);
   }
+}
+
+/////////////// form sent /////////////////
+
+const myForm = document.querySelector('.order__form-tag');
+const send = document.querySelector('.order__form-button');
+const errors = document.querySelector('#errors');
+const success = document.querySelector('#success');
+
+send.addEventListener('click', event => {
+  event.preventDefault();
+
+  if (validateForm(myForm)) {
+    const formData = {
+        name: myForm.elements.name.value,
+        phone: myForm.elements.phone.value,
+        comment: myForm.elements.comment.value,
+        to: myForm.elements.email
+    }
+ 
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
+    xhr.send(JSON.stringify(formData));
+        xhr.addEventListener('load', () => {
+            if (xhr.response.status === true) {
+              success.style.display = 'flex';
+            }
+            if (xhr.response.status === false) {
+              errors.style.display = 'flex';
+          }
+        });
+    }
+});
+
+function validateForm(form) {
+  let valid = true;
+
+  if (!validateField(form.elements.name)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.phone)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.street)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.home)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.part)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.appt)) {
+    valid = false;
+  }
+
+  if (!validateField(form.elements.floor)) {
+    valid = false;
+  }
+  return valid;
+}
+
+function validateField(field) {
+  field.nextElementSibling.textContent = field.validationMessage;
+  return field.checkValidity();
 }

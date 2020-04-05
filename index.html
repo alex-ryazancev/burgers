@@ -494,40 +494,48 @@
         <div class="container">
           <div class="section__title">Закажите доставку</div>
           <div class="order__form">
-            <form class="order__form-tag" id="order-form">
+            <form class="order__form-tag">
               <div class="order__form-col">
                 <div class="order__form-row order__form-row_double">
                   <label class="order__form-block">
                     <div class="order__form-label">Имя</div>
-                    <input class="order__form-input" name="name" type="name" placeholder="Имя">
+                    <input class="order__form-input" name="name" type="name" placeholder="Имя" required>
+                    <div class="order__form-error"></div>
                   </label>
                   <label class="order__form-block">
                     <div class="order__form-label">Телефон</div>
-                    <input class="order__form-input phone-mask" name="phone" type="tel" placeholder="+7 (999) 111-11-11" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18">
+                    <input class="order__form-input phone-mask" name="phone" type="tel" placeholder="+7 (999) 111-11-11"
+                      required>
+                      <div class="order__form-error"></div>
                   </label>
                 </div>
                 <div class="order__form-row">
                   <label class="order__form-block">
                     <div class="order__form-label">Улица</div>
-                    <input class="order__form-input" name="street" type="text" placeholder="Улица">
+                    <input class="order__form-input" name="street" type="text" placeholder="Название улицы" required>
+                    <div class="order__form-error"></div>
                   </label>
                 </div>
                 <div class="order__form-row order__form-row_quatro">
                   <label class="order__form-block">
                     <div class="order__form-label">Дом</div>
-                    <input class="order__form-input" name="home" type="number" placeholder="Дом">
+                    <input class="order__form-input" name="home" type="number" placeholder="№" required>
+                    <div class="order__form-error"></div>
                   </label>
                   <label class="order__form-block">
                     <div class="order__form-label">Корпус</div>
-                    <input class="order__form-input" name="part" type="text" placeholder="Корпус">
+                    <input class="order__form-input" name="part" type="text" placeholder="№/лит" required>
+                    <div class="order__form-error"></div>
                   </label>
                   <label class="order__form-block">
                     <div class="order__form-label">Квартира</div>
-                    <input class="order__form-input" name="appt" type="number" placeholder="Квартира">
+                    <input class="order__form-input" name="appt" type="number" placeholder="№" required>
+                    <div class="order__form-error"></div>
                   </label>
                   <label class="order__form-block">
                     <div class="order__form-label">Этаж</div>
-                    <input class="order__form-input" name="floor" type="number" placeholder="Этаж">
+                    <input class="order__form-input" name="floor" type="number" placeholder="№" required>
+                    <div class="order__form-error"></div>
                   </label>
                 </div>
               </div>
@@ -535,7 +543,8 @@
                 <div class="order__form-row">
                   <label class="order__form-block">
                     <div class="order__form-label">Комментарий</div>
-                    <textarea class="order__form-input order__form-input_textarea" name="comment"></textarea>
+                    <textarea class="order__form-input order__form-input_textarea" name="comment"
+                      placeholder="Введите комментарий"></textarea>
                   </label>
                 </div>
                 <div class="order__form-buttons">
