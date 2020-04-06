@@ -149,7 +149,7 @@ function loop(direction, e) {
   }
 }
 
-/////////////// form sent /////////////////
+/////////////// form send /////////////////
 
 const myForm = document.querySelector('.order__form-tag');
 send = document.querySelector('.order__form-button');
@@ -168,12 +168,13 @@ send.addEventListener('click', event => {
   }
 
   if (validateForm(myForm)) {
+    var formData = new FormData();
+    formData.append(myForm);
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
     xhr.send(JSON.stringify(formData));
     xhr.addEventListener('load', () => {
 
-      // console.log(xhr.response.status)
       if (xhr.response.status < 400) {
         success.style.display = 'flex';
       }
@@ -188,7 +189,7 @@ send.addEventListener('click', event => {
       closeBtn.addEventListener('click', function () {
         success.style.display = 'none';
         errors.style.display = 'none';
-      })
+      });
     });
   }
 });
