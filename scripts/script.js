@@ -160,14 +160,14 @@ closeBtn = document.querySelector('#close-btn')
 send.addEventListener('click', event => {
   event.preventDefault();
 
-  if (validateForm(myForm)) {
-    const formData = {
-      name: myForm.elements.name.value,
-      phone: myForm.elements.phone.value,
-      comment: myForm.elements.comment.value,
-      to: myForm.elements.email
-    }
+  const formData = {
+    name: myForm.elements.name.value,
+    phone: myForm.elements.phone.value,
+    comment: myForm.elements.comment.value,
+    to: myForm.elements.email
+  }
 
+  if (validateForm(myForm)) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
     xhr.send(JSON.stringify(formData));
@@ -180,6 +180,15 @@ send.addEventListener('click', event => {
       else {
         errors.style.display = 'flex';
       }
+
+      closeBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+      });
+      
+      closeBtn.addEventListener('click', function () {
+        success.style.display = 'none';
+        errors.style.display = 'none';
+      })
     });
   }
 });
@@ -221,12 +230,3 @@ function validateField(field) {
   field.nextElementSibling.textContent = field.validationMessage;
   return field.checkValidity();
 }
-
-closeBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-});
-
-closeBtn.addEventListener('click', function () {
-  success.style.display = 'none';
-  errors.style.display = 'none';
-})
