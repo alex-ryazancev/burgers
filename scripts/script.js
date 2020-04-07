@@ -88,18 +88,27 @@ for (let i = 0; i < teamAccoItemLength; i++) {
 const reviews = document.querySelector('.reviews');
 overlay = document.querySelector('.popup');
 popupText = document.querySelector('.full-review__content');
+popupTextName = document.querySelector('.full-review__title');
 closePopup = document.querySelector('.full-review__close')
 
 reviews.addEventListener('click', e => {
   let element = e.target;
 
   if (element.tagName === 'A') {
+
     let modalText = element.previousElementSibling.innerHTML
 
     popupText.innerHTML = modalText;
     overlay.style.display = 'flex';
 
+    if (overlay.style.display === 'flex') {
+      let modalText = element.nextElementSibling.innerHTML
+      popupTexName.innerHTML = modalText;
+    }
   }
+
+
+
 })
 
 document.addEventListener('keyup', e => {
@@ -173,7 +182,7 @@ send.addEventListener('click', event => {
     xhr.send(formData);
     xhr.addEventListener('load', () => {
 
-      if (xhr.response.status < 400) {
+      if (xhr.status < 400) {
         success.style.display = 'flex';
       }
       else {
@@ -183,7 +192,7 @@ send.addEventListener('click', event => {
       closeBtn.addEventListener('click', function (event) {
         event.preventDefault();
       });
-      
+
       closeBtn.addEventListener('click', function () {
         success.style.display = 'none';
         errors.style.display = 'none';
