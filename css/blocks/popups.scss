@@ -22,7 +22,7 @@
     transition: opacity .3s;
     font-size: rem(14px);
     border-radius: rem(5px);
-    padding: rem(50px) rem(20px);
+    padding: rem(50px) 20%;
 }
 
 .full-review {
@@ -63,7 +63,6 @@
 }
 
 .status-popup__inner {
-    padding: rem(20px);
     text-align: center;
 }
 

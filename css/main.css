@@ -1538,7 +1538,7 @@ footer {
   transition: opacity 0.3s;
   font-size: 0.875rem;
   border-radius: 0.3125rem;
-  padding: 3.125rem 1.25rem;
+  padding: 3.125rem 20%;
 }
 
 .full-review {
@@ -1578,7 +1578,6 @@ footer {
 }
 
 .status-popup__inner {
-  padding: 1.25rem;
   text-align: center;
 }
 
