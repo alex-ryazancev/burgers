@@ -164,13 +164,13 @@ send.addEventListener('click', event => {
   formData.append('name', myForm.elements.name.value);
   formData.append('phone', myForm.elements.phone.value);
   formData.append('comment', myForm.elements.comment.value);
-  formData.append('to', 'mail@gmail.com');
+  formData.append('to', 'alex-ryazancev@mail.ru');
 
   if (validateForm(myForm)) {
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-    xhr.send(JSON.stringify(formData));
+    xhr.send(formData);
     xhr.addEventListener('load', () => {
 
       if (xhr.response.status < 400) {
