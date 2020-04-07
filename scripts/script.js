@@ -160,16 +160,14 @@ closeBtn = document.querySelector('#close-btn')
 send.addEventListener('click', event => {
   event.preventDefault();
 
-  const formData = {
-    name: myForm.elements.name.value,
-    phone: myForm.elements.phone.value,
-    comment: myForm.elements.comment.value,
-    to: myForm.elements.email
-  }
+  const formData = new FormData();
+  formData.append('name', myForm.elements.name.value);
+  formData.append('phone', myForm.elements.phone.value);
+  formData.append('comment', myForm.elements.comment.value);
+  formData.append('to', 'mail@gmail.com');
 
   if (validateForm(myForm)) {
-    var formData = new FormData();
-    formData.append(myForm);
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
     xhr.send(JSON.stringify(formData));
