@@ -88,7 +88,7 @@ for (let i = 0; i < teamAccoItemLength; i++) {
 const reviews = document.querySelector('.reviews');
 overlay = document.querySelector('.popup');
 popupText = document.querySelector('.full-review__content');
-popupTextName = document.querySelector('.full-review__title');
+popupName = document.querySelector('.full-review__title');
 closePopup = document.querySelector('.full-review__close')
 
 reviews.addEventListener('click', e => {
@@ -96,18 +96,13 @@ reviews.addEventListener('click', e => {
 
   if (element.tagName === 'A') {
 
-    let modalText = element.previousElementSibling.innerHTML
-
+    let modalText = element.previousElementSibling.innerHTML;
+    let modalName = modalText.previousElementSibling.innerHTML
+    
+    popupName.innerHTML = modalName;
     popupText.innerHTML = modalText;
     overlay.style.display = 'flex';
-
-    if (overlay.style.display === 'flex') {
-      let modalText = element.nextElementSibling.innerHTML
-      popupTexName.innerHTML = modalText;
-    }
   }
-
-
 
 })
 
@@ -220,17 +215,6 @@ function validateForm(form) {
     valid = false;
   }
 
-  if (!validateField(form.elements.part)) {
-    valid = false;
-  }
-
-  if (!validateField(form.elements.appt)) {
-    valid = false;
-  }
-
-  if (!validateField(form.elements.floor)) {
-    valid = false;
-  }
   return valid;
 }
 
@@ -238,3 +222,4 @@ function validateField(field) {
   field.nextElementSibling.textContent = field.validationMessage;
   return field.checkValidity();
 }
+
