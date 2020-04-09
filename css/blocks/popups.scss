@@ -16,13 +16,15 @@
 }
 
 .full-review__popup {
-    background: wheat;
+    background: rgb(255, 243, 222);
     position: relative;
-    margin: 15%;
+    // margin: 0 15%;
     transition: opacity .3s;
     font-size: rem(14px);
     border-radius: rem(5px);
-    padding: rem(50px) 20%;
+    padding: rem(30px);
+    max-width: rem(580px);
+
 }
 
 .full-review {
@@ -37,6 +39,7 @@
 }
 
 .full-review__content {
+    min-height: rem(150px);
     font-size: rem(14px);
     @include ubuntu();
 }
@@ -48,7 +51,6 @@
     display: block;
     position: absolute;
     right: rem(20px);
-    top: rem(20px);
     opacity: .7;
     transition: .3s;
 
@@ -67,25 +69,12 @@
 }
 
 .status-popup__message {
+    min-width: rem(157px);
     margin-bottom: rem(20px);
     font-size: rem(14px);
 }
 
-.status-popup__success {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(#2f3234, .99);
-    z-index: 100;
-    transition: opacity .3s;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-
-
+.status-popup__success, 
 .status-popup__errors {
     position: fixed;
     top: 0;
@@ -98,7 +87,9 @@
     justify-content: center;
     align-items: center;
     display: none;
-}
+    }
+
+
 
 .error-message {
     color: $red;

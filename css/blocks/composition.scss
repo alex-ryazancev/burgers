@@ -1,0 +1,41 @@
+.slider__composition {
+    display: none;
+    border-radius: 5px;
+    background: #ffffff;
+    position: absolute;
+    flex-flow: column nowrap;
+    padding: rem(25px);
+    margin-left: rem(-190px);
+    margin-top: rem(-30px);
+
+    @include tablets {
+        margin-top: rem(-310px);
+        margin-left: rem(0px);
+      }
+      @include phones {
+        margin-top: rem(-193px);
+        margin-left: rem(50px);
+      }
+}
+
+.slider__composition-item {
+    display: flex;
+    align-items: center;
+    padding: rem(5px) 0;
+}
+
+.slider__composition-icon {
+    height: rem(43px);
+    width:  rem(43px);
+    margin-right: rem(30px);
+}
+
+.slider__composition-text {
+    width: rem(130px);
+    font-size: rem(14px);
+    font-weight: bold;
+}
+
+.slider__composition-size {
+    text-align: right;
+}

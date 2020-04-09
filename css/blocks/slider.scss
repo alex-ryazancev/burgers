@@ -131,11 +131,15 @@
   max-width: 100%;
   max-height: rem(400px);
   margin-top: 22%;
+  
 
   @include tablets {
     max-width: 80%;
     padding: 0;
     margin-top: 5%;
+  }
+  @include phones {
+    margin-top: 20%;
   }
 }
 
@@ -143,16 +147,22 @@
   position: absolute;
   display: flex;
   flex-flow: column nowrap;
+  margin-left: rem(-380px);
+  margin-top: rem(30px);
 
   @include tablets {
-    position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-bottom: rem(20px);
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: rem(0px);
+    margin-top: rem(-450px);
   }
   @include phones {
-    margin-bottom: rem(-15px);
+    // margin-bottom: rem(-15px);
+    margin-left: rem(0px);
+    margin-top: rem(-330px);
   }
 }
 
@@ -166,7 +176,10 @@
   margin-bottom: rem(320px);
 
   @include tablets {
-    margin: 0 50% 0 0;
+    margin: 0 rem(300px) 0 0;
+  }
+  @include phones {
+    margin: 0 rem(200px) 0 0;
   }
 }
 
