@@ -6,17 +6,13 @@
     position: absolute;
     flex-flow: column nowrap;
     padding: rem(25px);
-    margin-left: rem(-190px);
-    margin-top: rem(-30px);
+    margin-left: rem(90px);
 
     @include tablets {
-        margin-top: rem(-310px);
-        margin-left: rem(0px);
-      }
-      @include phones {
-        margin-top: rem(-193px);
-        margin-left: rem(50px);
-      }
+        margin-left: rem(90px);
+    }
+
+    @include phones {}
 }
 
 .slider__composition-item {
@@ -27,7 +23,7 @@
 
 .slider__composition-icon {
     height: rem(43px);
-    width:  rem(43px);
+    width: rem(43px);
     margin-right: rem(30px);
 }
 
@@ -41,3 +37,33 @@
     text-align: right;
 }
 
+.slider__composition-btn {
+    fill: rgb(255, 61, 61);
+    width: rem(15px);
+    height: rem(15px);
+    display: block;
+    position: absolute;
+    right: rem(20px);
+    opacity: .7;
+    transition: .3s;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.slider__composition-close {
+    display: none;
+    @include tablets {
+        display: flex;
+    }
+}
+
+.slider__left-structure:hover .slider__composition {
+    display: flex;
+}

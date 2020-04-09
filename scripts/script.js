@@ -129,32 +129,17 @@ closePopup.addEventListener('click', function () {
 
 const compositionOpen = document.querySelector("#composition-open");
 compositionMenu = document.querySelector("#composition-menu");
+compositionClose = document.querySelector("#composition-close");
 
-const closeElement = compositionMenu.querySelector(".slider__composition-close");
-closeElement.addEventListener('click', function (event) {
+compositionClose.addEventListener('click', event => {
+    event.preventDefault();
+    compositionMenu.style.display = "none";
+  });
+
+compositionOpen.addEventListener('click', event => {
   event.preventDefault();
+//   compositionMenu.style.display = "flex";
 });
-
-closeElement.addEventListener("click", function(e) {
-  e.preventDefault();
-  compositionMenu.style.display = "none";
-});
-
-compositionMenu.addEventListener("click", function(e) {
-  if (e.target === compositionMenu) {
-    closeElement.click();
-  }
-})
-
-compositionOpen.addEventListener('click', function (event) {
-  event.preventDefault();
-});
-
-compositionOpen.addEventListener("click", function() {
-  compositionMenu.style.display = "flex";
-});
-
-
 
 /////////////// slider /////////////////
 
@@ -224,7 +209,7 @@ send.addEventListener('click', event => {
   formData.append('name', myForm.elements.name.value);
   formData.append('phone', myForm.elements.phone.value);
   formData.append('comment', myForm.elements.comment.value);
-  formData.append('to', 'alex-ryazancev@mail.ru');
+  formData.append('to', 'alexey-ryazancev@mail.ru');
 
   if (validateForm(myForm)) {
 
@@ -234,17 +219,16 @@ send.addEventListener('click', event => {
     xhr.addEventListener('load', () => {
 
       if (xhr.status < 400) {
+        myForm.reset();
         success.style.display = 'flex';
       }
+
       else {
         errors.style.display = 'flex';
       }
-
-      closeBtn.addEventListener('click', function (event) {
+     
+      closeBtn.addEventListener('click', event => {
         event.preventDefault();
-      });
-
-      closeBtn.addEventListener('click', function () {
         success.style.display = 'none';
         errors.style.display = 'none';
       });

@@ -25,7 +25,7 @@
     flex-direction: column;
     height: rem(1000px);
   }
-  
+
   @include phones {
     height: rem(700px);
   }
@@ -80,9 +80,7 @@
 .slider__links {
   display: flex;
 
-  @include phones {
-
-  }
+  @include phones {}
 }
 
 .right-arrow {
@@ -101,9 +99,7 @@
   transition: .3s;
   display: flex;
 
-  @include tablets {
-
-  }
+  @include tablets {}
 
   &:hover {
 
@@ -131,13 +127,14 @@
   max-width: 100%;
   max-height: rem(400px);
   margin-top: 22%;
-  
+
 
   @include tablets {
     max-width: 80%;
     padding: 0;
     margin-top: 5%;
   }
+
   @include phones {
     margin-top: 20%;
   }
@@ -145,24 +142,46 @@
 
 .slider__left-item {
   position: absolute;
+  left: 0;
   display: flex;
   flex-flow: column nowrap;
-  margin-left: rem(-380px);
-  margin-top: rem(30px);
+  justify-content: space-between;
+  height: rem(500px);
 
   @include tablets {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    align-content: flex-start;
-    margin-left: rem(0px);
-    margin-top: rem(-450px);
+    margin-top: rem(-230px);
+    margin-left: rem(150px);
   }
+
   @include phones {
-    // margin-bottom: rem(-15px);
+    margin-top: rem(-130px);
     margin-left: rem(0px);
-    margin-top: rem(-330px);
+  }
+}
+
+.slider__left-calories {
+
+  @include tablets {
+    margin-left: rem(280px);
+  }
+
+  @include phones {
+    margin-left: rem(200px);
+  }
+}
+
+.slider__left-structure {
+  display: flex;
+  flex-direction: row;
+
+  @include tablets {}
+
+  @include phones {
+    // margin-top: rem(-330px);
   }
 }
 
@@ -173,15 +192,11 @@
   background-color: #e34f27;
   border-radius: rem(5px);
   text-decoration: none;
-  margin-bottom: rem(320px);
   opacity: 60%;
 
-  @include tablets {
-    margin: 0 rem(300px) 0 0;
-  }
-  @include phones {
-    margin: 0 rem(200px) 0 0;
-  }
+  @include tablets {}
+
+  @include phones {}
 }
 
 .slider__structure:hover {
@@ -234,11 +249,12 @@
 .section__title_red {
   color: #c1401e;
   letter-spacing: rem(-2px);
-  
+
   &.slider__title-link {
     font-size: rem(35px);
     margin-bottom: rem(-12px);
     padding: 0 rem(20px) 0 rem(20px);
+
     @include phones {
       line-height: rem(50px);
     }
