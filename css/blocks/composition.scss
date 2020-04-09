@@ -2,6 +2,7 @@
     display: none;
     border-radius: 5px;
     background: #ffffff;
+    opacity: 80%;
     position: absolute;
     flex-flow: column nowrap;
     padding: rem(25px);
@@ -39,3 +40,4 @@
 .slider__composition-size {
     text-align: right;
 }
+

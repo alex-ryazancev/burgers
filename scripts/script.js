@@ -123,21 +123,38 @@ closePopup.addEventListener('click', function (event) {
 
 closePopup.addEventListener('click', function () {
   overlay.style.display = 'none';
-  compositionMenu.style.display = 'none';
 })
 
 /////////////// composition menu /////////////////
 
-const compositionOpen = document.querySelector('#composition-open');
-compositionMenu = document.querySelector('#composition-menu')
+const compositionOpen = document.querySelector("#composition-open");
+compositionMenu = document.querySelector("#composition-menu");
+
+const closeElement = compositionMenu.querySelector(".slider__composition-close");
+closeElement.addEventListener('click', function (event) {
+  event.preventDefault();
+});
+
+closeElement.addEventListener("click", function(e) {
+  e.preventDefault();
+  compositionMenu.style.display = "none";
+});
+
+compositionMenu.addEventListener("click", function(e) {
+  if (e.target === compositionMenu) {
+    closeElement.click();
+  }
+})
 
 compositionOpen.addEventListener('click', function (event) {
   event.preventDefault();
 });
 
-compositionOpen.addEventListener('click', function () {
-  compositionMenu.style.display = 'flex';
-})
+compositionOpen.addEventListener("click", function() {
+  compositionMenu.style.display = "flex";
+});
+
+
 
 /////////////// slider /////////////////
 
