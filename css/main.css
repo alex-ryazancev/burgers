@@ -486,6 +486,10 @@ template {
   font-weight: bold;
   font-style: normal;
 }
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
 @media screen and (max-width: 992px) {
   html {
     font-size: 0.9375rem;
@@ -495,6 +499,18 @@ template {
   html {
     font-size: 0.8125rem;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 html,
@@ -563,6 +579,14 @@ footer {
 
 * {
   box-sizing: border-box;
+}
+
+.section {
+  min-height: 40.625rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .best {
@@ -880,7 +904,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(47, 50, 52, 0.99);
+  background: #2f3234;
   align-items: center;
   justify-content: center;
   z-index: 100;
@@ -957,6 +981,7 @@ footer {
   background: url("../img/bg/bg-hero.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
+  flex-direction: row;
 }
 @media screen and (max-width: 768px) {
   .hero {
@@ -1119,6 +1144,11 @@ footer {
   text-decoration: none;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .menu-acco__trigger {
+    width: 4.0625rem;
+  }
+}
 @media screen and (max-width: 480px) {
   .menu-acco__trigger {
     width: 3.125rem;
@@ -1146,10 +1176,10 @@ footer {
 
 .menu-acco__content {
   height: 100%;
-  float: left;
   background: rgba(47, 50, 52, 0.93);
   width: 0;
   overflow: hidden;
+  transition: width 0.6s;
 }
 
 .menu-acco__text {
@@ -1160,7 +1190,6 @@ footer {
   padding: 3.75rem 1.875rem;
   width: 100%;
   line-height: 1.8;
-  display: none;
 }
 @media screen and (max-width: 480px) {
   .menu-acco__text {
@@ -1168,15 +1197,32 @@ footer {
   }
 }
 
-.show-hidden__menu {
-  width: 25rem;
+.menu-acco__item--active .menu-acco__content {
+  width: 34.375rem;
+}
+@media screen and (max-width: 768px) {
+  .menu-acco__item--active .menu-acco__content {
+    width: 21.875rem;
+  }
 }
 @media screen and (max-width: 480px) {
-  .show-hidden__menu {
+  .menu-acco__item--active .menu-acco__content {
     width: 13.75rem;
   }
 }
 
+.menu-acco__item--active .menu-acco__text {
+  animation: acco-text 0.8s linear forwards;
+}
+
+@keyframes acco-text {
+  75% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .menu {
   background: url("../img/bg/bg-assortiment.png") 50% no-repeat;
   background-size: cover;
@@ -1464,13 +1510,39 @@ footer {
   background: transparent;
 }
 
+.order__form-error {
+  color: #b41515;
+}
+
 .popup {
   display: none;
 }
 
 .full-review {
-  padding: 1.5625rem 1.25rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, 0.99);
+  z-index: 100;
+  transition: opacity 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-review__popup {
+  background: #fff3de;
   position: relative;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  border-radius: 0.3125rem;
+  padding: 1.875rem;
+  max-width: 36.25rem;
+}
+
+.full-review {
+  padding: 1.5625rem 1.25rem;
 }
 
 .full-review__title {
@@ -1481,18 +1553,19 @@ footer {
 }
 
 .full-review__content {
+  min-height: 9.375rem;
   font-size: 0.875rem;
   font-family: "Ubuntu", Helvetica, sans-serif;
   font-weight: 300;
 }
 
 .full-review__close {
+  fill: #ff3d3d;
   width: 0.9375rem;
   height: 0.9375rem;
   display: block;
   position: absolute;
   right: 1.25rem;
-  top: 1.25rem;
   opacity: 0.7;
   transition: 0.3s;
 }
@@ -1505,17 +1578,28 @@ footer {
 }
 
 .status-popup__inner {
-  padding: 1.25rem;
   text-align: center;
 }
 
 .status-popup__message {
+  min-width: 9.8125rem;
   margin-bottom: 1.25rem;
   font-size: 0.875rem;
 }
 
-.status-popup {
-  width: 15rem;
+.status-popup__success,
+.status-popup__errors {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, 0.99);
+  z-index: 100;
+  transition: opacity 0.3s;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 .error-message {
@@ -1647,6 +1731,7 @@ footer {
 }
 
 .section {
+  height: 100%;
   height: 100vh;
   min-height: 40.625rem;
   position: relative;
@@ -1656,6 +1741,7 @@ footer {
 @media screen and (max-width: 768px) {
   .section {
     min-height: initial;
+    height: 100vh;
   }
 }
 
@@ -1773,8 +1859,8 @@ footer {
 
 .team-acco__content {
   padding-top: 0.875rem;
-  display: none;
   margin-right: -1.25rem;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   .team-acco__content {
@@ -1782,21 +1868,17 @@ footer {
   }
 }
 
-.show-hidden {
+.team-acco__item--active .team-acco__content {
+  animation: acco-text 0.6s;
   display: block;
 }
-.show-hidden:after {
-  display: block;
-  transition: 0.3s;
+
+.team-acco__item--active .team-acco__text {
+  animation: acco-text 0.6s;
 }
-@media screen and (max-width: 480px) {
-  .show-hidden:after {
-    left: 5.3125rem;
-    top: 0.9375rem;
-  }
-}
-.show-hidden:before {
-  display: none;
+
+.team-acco__item--active .team-acco__trigger:before {
+  transform: rotate(180deg);
 }
 
 .team-acco__pic {
@@ -1919,20 +2001,32 @@ footer {
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5% 0 5%;
+  padding: 0 5%;
 }
 
 .slider__content {
   display: flex;
+  height: 37.5rem;
+  margin: 6.25rem 0;
 }
 @media screen and (max-width: 768px) {
   .slider__content {
     flex-direction: column;
+    height: 62.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__content {
+    height: 43.75rem;
   }
 }
 
 .slider__right {
-  padding-right: 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 5%;
 }
 @media screen and (max-width: 768px) {
   .slider__right {
@@ -1944,7 +2038,17 @@ footer {
 }
 @media screen and (max-width: 768px) and (max-width: 480px) {
   .slider__right {
+    padding: 3%;
+  }
+}
+
+.slider__left {
+  padding-top: 10%;
+}
+@media screen and (max-width: 480px) {
+  .slider__left {
     padding: 0;
+    margin: 0;
   }
 }
 
@@ -1964,7 +2068,6 @@ footer {
 .slider__links {
   display: flex;
 }
-
 .right-arrow {
   transform: rotate(270deg);
   right: 0;
@@ -1978,30 +2081,22 @@ footer {
 .left-arrow,
 .right-arrow {
   position: absolute;
-  bottom: 40%;
   transition: 0.3s;
-  height: 11%;
   display: flex;
-}
-@media screen and (max-width: 768px) {
-  .left-arrow,
-.right-arrow {
-    height: 2%;
-  }
 }
 .left-arrow:hover .left-arrow__icon,
 .left-arrow:hover .right-arrow__icon,
 .right-arrow:hover .left-arrow__icon,
 .right-arrow:hover .right-arrow__icon {
   margin-bottom: -0.9375rem;
-  width: 1.875rem;
+  width: 2.1875rem;
   height: 1.875rem;
 }
 
 .left-arrow__icon,
 .right-arrow__icon {
   width: 2.1875rem;
-  height: 2.1875rem;
+  height: 1.25rem;
   transition: 0.3s;
 }
 
@@ -2011,31 +2106,62 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   max-width: 100%;
-  max-height: 100%;
-  padding-top: 20%;
+  max-height: 25rem;
+  margin-top: 22%;
 }
 @media screen and (max-width: 768px) {
   .slider__menu-img {
     max-width: 80%;
     padding: 0;
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__menu-img {
+    margin-top: 20%;
   }
 }
 
 .slider__left-item {
   position: absolute;
+  left: 0;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 31.25rem;
 }
 @media screen and (max-width: 768px) {
   .slider__left-item {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 1.25rem;
+    align-items: flex-start;
+    margin-top: -14.375rem;
+    margin-left: 9.375rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__left-item {
+    margin-top: -8.125rem;
+    margin-left: 0rem;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .slider__left-calories {
+    margin-left: 17.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__left-calories {
+    margin-left: 12.5rem;
+  }
+}
+
+.slider__left-structure {
+  display: flex;
+  flex-direction: row;
+}
 .slider__structure {
   display: flex;
   flex-flow: column nowrap;
@@ -2043,12 +2169,11 @@ footer {
   background-color: #e34f27;
   border-radius: 0.3125rem;
   text-decoration: none;
-  margin-bottom: 18.75rem;
+  opacity: 60%;
 }
-@media screen and (max-width: 768px) {
-  .slider__structure {
-    margin: 0 50% 0 0;
-  }
+.slider__structure:hover {
+  background-color: #e34f27;
+  opacity: 100%;
 }
 
 .slider__calories {
@@ -2101,8 +2226,88 @@ footer {
   margin-bottom: -0.75rem;
   padding: 0 1.25rem 0 1.25rem;
 }
+@media screen and (max-width: 480px) {
+  .section__title_red.slider__title-link {
+    line-height: 3.125rem;
+  }
+}
 
-.slider__title {
-  text-decoration: none;
-  font-style: none;
+.section__title-slider {
+  color: #fff;
+  line-height: 4.375rem;
+}
+@media screen and (max-width: 480px) {
+  .section__title-slider {
+    font-size: 2.8125rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+}
+
+.slider__composition {
+  display: none;
+  border-radius: 5px;
+  background: #ffffff;
+  opacity: 80%;
+  position: absolute;
+  flex-flow: column nowrap;
+  padding: 1.5625rem;
+  margin-left: 5.625rem;
+}
+@media screen and (max-width: 768px) {
+  .slider__composition {
+    margin-left: 5.625rem;
+  }
+}
+.slider__composition-item {
+  display: flex;
+  align-items: center;
+  padding: 0.3125rem 0;
+}
+
+.slider__composition-icon {
+  height: 2.6875rem;
+  width: 2.6875rem;
+  margin-right: 1.875rem;
+}
+
+.slider__composition-text {
+  width: 8.125rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.slider__composition-size {
+  text-align: right;
+}
+
+.slider__composition-btn {
+  fill: #ff3d3d;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  display: block;
+  position: absolute;
+  right: 1.25rem;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.slider__composition-btn:hover {
+  opacity: 1;
+}
+.slider__composition-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slider__composition-close {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .slider__composition-close {
+    display: flex;
+  }
+}
+
+.slider__left-structure:hover .slider__composition {
+  display: flex;
 }

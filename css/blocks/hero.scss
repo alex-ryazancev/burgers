@@ -2,6 +2,7 @@
   background: url("../img/bg/bg-hero.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
+  flex-direction: row;;
   @include tablets {
     padding-bottom: rem(100px);
   }

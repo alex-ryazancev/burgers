@@ -26,6 +26,10 @@
   text-decoration: none;
   position: relative;
 
+  @include tablets {
+    width: rem(65px);
+  }
+
   @include phones {
     width: rem(50px);
   }
@@ -51,10 +55,11 @@
 
 .menu-acco__content {
   height: 100%;
-  float: left;
+  // float: left;
   background: rgba(#2f3234, .93);
   width: 0;
   overflow: hidden;
+  transition: width .6s;
 }
 
 .menu-acco__text {
@@ -64,16 +69,35 @@
   padding: rem(60px) rem(30px);
   width: 100%;
   line-height: 1.8;
-  display: none;
+  // display: none;
 
   @include phones {
     padding: rem(25px) rem(15px);
   }
 }
 
-.show-hidden__menu {
-  width: rem(400px);
+.menu-acco__item--active .menu-acco__content {
+  width: rem(550px);
+
+  @include tablets {
+    width: rem(350px)
+  }
+
   @include phones {
     width: rem(220px)
+  }
+}
+
+.menu-acco__item--active .menu-acco__text {
+  animation: acco-text .8s linear forwards;
+}
+
+@keyframes acco-text {
+  75% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

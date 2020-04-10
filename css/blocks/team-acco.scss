@@ -76,30 +76,27 @@
 .team-acco__content {
   @extend %clearfix;
   padding-top: rem(14px);
-  display: none;
   margin-right: rem(-20px);
+  display: none;
 
   @include tablets {
     padding: 0 25%;
   }
 }
 
-.show-hidden {
-  &:after {
-    display: block;
-    transition: .3s;
+.team-acco__item--active .team-acco__content {
+  animation: acco-text .6s;
+  display: block;
+}
 
-    @include phones {
-      left: rem(85px);
-      top: rem(15px);
-    }
+.team-acco__item--active .team-acco__text {
+  animation: acco-text .6s;
   }
 
+.team-acco__item--active .team-acco__trigger {
   &:before {
-    display: none;
-  }
-
-  display: block
+    transform: rotate(180deg);
+ }
 }
 
 .team-acco__pic {
